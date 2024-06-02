@@ -2,8 +2,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-const EducationCard = ({ edu }) => {
-  const { course, institute, year } = edu;
+const ExperienceCard = ({ exp }) => {
+    const { jobTitle, company, year } = exp;
   return (
     <li className="group flex flex-row gap-2">
       <div className="flex flex-col pt-2 w-[21px] desktop:w-[68px] items-center">
@@ -12,13 +12,13 @@ const EducationCard = ({ edu }) => {
       </div>
 
       <div className="flex flex-1 flex-col gap-0.5 pb-6 group-last:pb-0">
-        <h3 className="font-normal text-base leading-[22.4px]">{course}</h3>
+        <h3 className="font-normal text-base leading-[22.4px]">{jobTitle}</h3>
         <p className="text-sm font-light text-white-400 leading-[16.8px]">
-          {institute}, {year}
+          {company}, {year}
         </p>
       </div>
     </li>
   );
 };
 
-export default EducationCard;
+export default ExperienceCard;

@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { PiStackSimple } from "react-icons/pi";
+import EducationCard from "../Utils/EducationCard";
 
 const Education = () => {
   // TODO: to be fetched from an API
@@ -17,10 +18,7 @@ const Education = () => {
     },
   ];
   return (
-    <section
-      className="p-6 rounded-[30px] bg-black-400
-    flex flex-col gap-6"
-    >
+    <section className="p-6 rounded-[30px] bg-black-400 flex flex-col gap-6">
       <div className="flex flex-row gap-2 text-start items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,9 +33,9 @@ const Education = () => {
         <h2 className="font-medium text-lg leading-[21.6px]">Education</h2>
       </div>
 
-      <ul className="flex flex-col gap-2">
-        {education.map((edu) => (
-          <li key={edu.course}>{edu.course}</li>
+      <ul className="flex flex-col">
+        {education.map((edu, index) => (
+          <EducationCard key={index} edu={edu} />
         ))}
       </ul>
     </section>
