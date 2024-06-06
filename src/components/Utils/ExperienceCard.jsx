@@ -3,7 +3,7 @@
 import React from "react";
 
 const ExperienceCard = ({ exp }) => {
-    const { jobTitle, company, year } = exp;
+  const { position, companyName, startYear, endYear } = exp;
   return (
     <li className="group flex flex-row gap-2">
       <div className="flex flex-col pt-2 w-[21px] desktop:w-[68px] items-center">
@@ -12,9 +12,9 @@ const ExperienceCard = ({ exp }) => {
       </div>
 
       <div className="flex flex-1 flex-col gap-0.5 pb-6 group-last:pb-0">
-        <h3 className="font-normal text-base leading-[22.4px]">{jobTitle}</h3>
+        <h3 className="font-normal text-base leading-[22.4px]">{position}</h3>
         <p className="text-sm font-light text-white-400 leading-[16.8px]">
-          {company}, {year}
+          {companyName}, {startYear} - {endYear}
         </p>
       </div>
     </li>

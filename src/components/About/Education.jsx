@@ -2,23 +2,12 @@
 import React from "react";
 import { PiStackSimple } from "react-icons/pi";
 import EducationCard from "../Utils/EducationCard";
+import { useGlobalContext } from "../../context";
 
 const Education = () => {
-  // TODO: to be fetched from an API
-  const education = [
-    {
-      course: "Bachelor's Degree in Web Design and Development",
-      institute: "XYZ University",
-      year: "2018 - 2022",
-    },
-    {
-      course: "Certification in User Experience (UX) Design",
-      institute: "UXUI Institute",
-      year: "2016 - 2018",
-    },
-  ];
+  const { portfolio } = useGlobalContext();
   return (
-    <section className="p-6 rounded-[30px] bg-black-400 flex flex-col gap-6">
+    <section className="section">
       <div className="flex flex-row gap-2 text-start items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -34,8 +23,8 @@ const Education = () => {
       </div>
 
       <ul className="flex flex-col">
-        {education.map((edu, index) => (
-          <EducationCard key={index} edu={edu} />
+        {portfolio.educations.map((edu) => (
+          <EducationCard key={edu.sys.id} edu={edu.fields} />
         ))}
       </ul>
     </section>

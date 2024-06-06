@@ -1,10 +1,14 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
-import NavigationButton from "../Utils/NavigationButton";
+import NavigationButton from "./NavigationButton";
 import { PiPencilLine } from "react-icons/pi";
-import ProjectCard from "../Utils/ProjectCard";
+import ProjectCard from "./ProjectCard";
 
-const Projects = () => {
+const Project = ({ isFeaturedProjects }) => {
+  {
+    /* TODO: Add Projects from Contentful */
+  }
   const featuredProjects = [
     {
       title: "Thelist Framer Website",
@@ -33,10 +37,7 @@ const Projects = () => {
   ];
 
   return (
-    <section
-      className="p-6 rounded-[30px] bg-black-400
-        flex flex-col gap-6"
-    >
+    <section className="section">
       <div className="flex flex-row gap-2 text-start items-center">
         <PiPencilLine className="text-green w-[21px] h-[21px]" />
         <h2 className="font-medium text-lg leading-[21.6px]">Projects</h2>
@@ -49,7 +50,9 @@ const Projects = () => {
         ))}
       </ul>
 
-      <NavigationButton href={"/projects"} buttonText={"All Projects"} />
+      {isFeaturedProjects && (
+        <NavigationButton href={"/projects"} buttonText={"All Projects"} />
+      )}
     </section>
   );
 };
@@ -58,4 +61,4 @@ const Projects = () => {
   /*  */
 }
 
-export default Projects;
+export default Project;

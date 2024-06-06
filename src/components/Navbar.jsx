@@ -20,8 +20,7 @@ const Navbar = () => {
       className="flex gap-3 p-3 rounded-[26px]
         fixed left-1/2 bottom-3 -translate-x-2/4
         bg-black-400/60 backdrop-blur-[9px]
-        tablet:rounded-[30px] z-10 
-        shadow-[0_0.602187px_0.602187px_-1.25px_rgba(0,0,0,0.18),0_2.28853px_2.28853px_-2.5px_rgba(0,0,0,0.16),0_10px_10px_-3.75px_rgba(0,0,0,0.063)]
+        tablet:rounded-[30px] z-50 box-shadow
       "
       tabIndex={0}
     >

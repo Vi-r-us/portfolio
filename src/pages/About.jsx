@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import Stacks from "../components/Home/Stacks";
+import Stacks from "../components/Utils/Stacks";
 import Hero from "../components/About/Hero";
 import Education from "../components/About/Education";
 import Experience from "../components/About/Experience";
@@ -11,7 +11,7 @@ const About = () => {
       <Hero />
       <Education />
       <Experience />
-      <Stacks />
+      <Stacks isFeaturedStacks={true} />
     </>
   );
 };

@@ -1,28 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import ExperienceCard from "../Utils/ExperienceCard";
+import { useGlobalContext } from "../../context";
 
 const Experience = () => {
-  // TODO: data to be fetched from an API
-  const experience = [
-    {
-      jobTitle: "Freelance Web Developer",
-      company: "InnovateTech Pvt. Ltd.",
-      year: "2020 - present",
-    },
-    {
-      jobTitle: "Lead UX/UI Designer",
-      company: "XYZ Creative Agency",
-      year: "2015 - 2019",
-    },
-    {
-      jobTitle: "UX/UI Designer",
-      company: "ABC Web Agency",
-      year: "2010 - 2015",
-    },
-  ];
+  const { portfolio } = useGlobalContext();
   return (
-    <section className="p-6 rounded-[30px] bg-black-400 flex flex-col gap-6">
+    <section className="section">
       <div className="flex flex-row gap-2 text-start items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -38,8 +22,8 @@ const Experience = () => {
       </div>
 
       <ul className="flex flex-col">
-        {experience.map((exp, index) => (
-          <ExperienceCard key={index} exp={exp} />
+        {portfolio.experiences.map((exp) => (
+          <ExperienceCard key={exp.sys.id} exp={exp.fields} />
         ))}
       </ul>
     </section>
