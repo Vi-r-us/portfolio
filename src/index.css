@@ -86,7 +86,7 @@ h6 {
 /* Custom Utility Classes */
 @layer components {
   .section {
-    @apply p-6 rounded-[30px] bg-black-400 flex flex-col gap-6 box-shadow;
+    @apply p-6 rounded-[30px] bg-black-400 flex flex-col gap-6 box-shadow animate;
   }
   .box-shadow {
     @apply shadow-[0_0.602187px_0.602187px_-1.25px_rgba(0,0,0,0.18),0_2.28853px_2.28853px_-2.5px_rgba(0,0,0,0.16),0_10px_10px_-3.75px_rgba(0,0,0,0.063)];
@@ -97,5 +97,19 @@ h6 {
   }
   .hero-para {
     @apply text-sm desktop:text-base leading-[19.6px] desktop:leading-[22.4px] font-light text-white-400;
+  }
+}
+
+.animate {
+  animation: scale 0.15s ease-out;
+}
+@keyframes scale {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) scale(1);
   }
 }

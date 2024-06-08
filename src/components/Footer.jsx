@@ -7,7 +7,7 @@ const Footer = () => {
   const { portfolio } = useGlobalContext();
   const firstName = portfolio.name.split(" ")[0];
   const link = portfolio.socials.filter(
-    (social) => social.fields.contactName.toLowerCase() === "github"
+    (social) => social.fields.contactType.toLowerCase() === "github"
   )[0].fields.url;
 
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
             {firstName}
           </a>
           &nbsp; in &nbsp;
-          <a href="https://github.com/sahil" target="_blank">
+          <a href="https://react.dev/" target="_blank">
             {"React"}
           </a>
           &nbsp;

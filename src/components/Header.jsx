@@ -14,7 +14,7 @@ const Header = () => {
     "instagram",
   ]);
   const socials = portfolio.socials.filter((social) =>
-    socialMediaSet.has(social.fields.contactName.toLowerCase())
+    socialMediaSet.has(social.fields.contactType.toLowerCase())
   );
 
   return (
@@ -95,7 +95,7 @@ const Header = () => {
               target="_blank"
               key={social.sys.id}
             >
-              {icons[social.fields.contactName.toLowerCase()]}
+              {icons[social.fields.contactType.toLowerCase()]}
             </a>
           ))}
         </ul>
