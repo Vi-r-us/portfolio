@@ -5,6 +5,7 @@ import Hero from "../components/Home/Hero";
 import Project from "../components/Utils/Project";
 import Stacks from "../components/Utils/Stacks";
 import About from "../components/Home/About";
+import ContactMe from "../components/Utils/ContactMe";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       {/* <About /> */}
       <Project isFeaturedProjects={true} />
       <Stacks isFeaturedStacks={true} />
+      <ContactMe />
     </>
   );
 };

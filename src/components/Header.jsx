@@ -88,9 +88,9 @@ const Header = () => {
           {/* TODO: Add hover animations */}
           {socials.map((social) => (
             <a
-              className="rounded-[14px] bg-black-200
-                flex items-center justify-center 
-                w-[42px] aspect-square [&>svg]:text-purple-600"
+              className="rounded-[14px] bg-black-200 flex items-center justify-center group
+                w-[42px] aspect-square [&>svg]:text-purple-600 hover:[&_svg]:text-purple-400
+                transition-all duration-300 radical-gradient"
               href={social.fields.url}
               target="_blank"
               key={social.sys.id}

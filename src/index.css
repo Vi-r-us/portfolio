@@ -100,6 +100,15 @@ h6 {
   }
 }
 
+.radical-gradient:hover {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgb(64, 64, 64) 0%,
+    rgb(38, 38, 38) 59%,
+    rgb(26, 26, 26) 100%
+  );
+}
+
 .animate {
   animation: scale 0.15s ease-out;
 }

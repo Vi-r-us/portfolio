@@ -4,6 +4,7 @@ import Stacks from "../components/Utils/Stacks";
 import Hero from "../components/About/Hero";
 import Education from "../components/About/Education";
 import Experience from "../components/About/Experience";
+import ContactMe from "../components/Utils/ContactMe";
 
 const About = () => {
   return (
@@ -12,6 +13,7 @@ const About = () => {
       <Education />
       <Experience />
       <Stacks isFeaturedStacks={true} />
+      <ContactMe />
     </>
   );
 };

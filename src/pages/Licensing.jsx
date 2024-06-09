@@ -2,6 +2,7 @@
 import React from "react";
 import { useGlobalContext } from "../context";
 import { icons } from "../utilities/icons";
+import ContactMe from "../components/Utils/ContactMe";
 
 const Licensing = () => {
   const { portfolio } = useGlobalContext();
@@ -32,6 +33,8 @@ const Licensing = () => {
           ))}
         </ul>
       </section>
+
+      <ContactMe />
     </>
   );
 };
