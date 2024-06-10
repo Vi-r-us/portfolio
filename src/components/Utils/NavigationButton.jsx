@@ -11,13 +11,13 @@ const NavigationButton = ({ buttonText, href }) => {
     <Link
       to={href}
       className="h-[42px] bg-black-200 text-purple-600 rounded-xl
-        flex justify-center items-center gap-[6px] relative
-        box-shadow font-medium text-sm hover:text-purple-400 group"
+        flex justify-center items-center gap-[6px] relative duration-[0.3s] transition-all 
+        ease-in-out box-shadow font-medium text-sm hover:text-purple-400 group"
     >
       {buttonText}
       <RiArrowRightDoubleLine
-        className="w-[18px] h-[18px]
-        relative group-hover:left-1"
+        className="w-[18px] h-[18px] transition-all duration-[0.3s] 
+        ease-in-out relative left-0 group-hover:left-1"
       />
     </Link>
   );

@@ -3,9 +3,9 @@ import { createClient } from "contentful";
 import React, { useContext, useEffect, useState } from "react";
 
 const client = createClient({
-  space: "8ndrx8finm69",
+  space: import.meta.env.VITE_SPACE,
   environment: "master",
-  accessToken: "jpgEZ4orRrjywQ8Y3mBHBQI1BEHaWbisS3Y9JBv5yXQ",
+  accessToken: import.meta.env.VITE_API_KEY,
 });
 
 const AppContext = React.createContext();
@@ -19,7 +19,7 @@ const AppProvider = ({ children }) => {
     try {
       const response = await client.getEntries({ content_type: "portfolio" });
       setPortfolio({ ...response.items[0].fields });
-      
+
       setLoading(false);
     } catch (error) {
       console.log(error);

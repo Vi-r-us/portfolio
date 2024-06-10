@@ -32,10 +32,9 @@ const Navbar = () => {
         >
           <Link
             to={link.href}
-            className="w-full h-full bg-black-200 rounded-[14px]
-            flex items-center justify-center
-            [&_svg]:text-purple-600 [&_svg]:w-5 [&_svg]:h-5
-            tablet:[&_svg]:w-6 tablet:[&_svg]:h-6"
+            className="w-full h-full bg-black-200 rounded-[14px] flex items-center justify-center 
+            text-purple-600 hover:text-purple-400 [&_svg]:w-5 tablet:[&_svg]:w-6 
+            [&_svg]:h-5 tablet:[&_svg]:h-6 [&_*]:duration-[0.3s] [&_*]:transition-all [&_*]:ease-in-out radical-gradient"
           >
             {link.icon}
           </Link>

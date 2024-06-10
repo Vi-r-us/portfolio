@@ -22,7 +22,8 @@ const Licensing = () => {
               key={contact.sys.id}
               href={contact.fields.url}
               className="flex gap-2 items-center h-[42px] px-[13px] rounded-[14px] 
-                bg-black-200  text-purple-600 box-shadow overflow-hidden"
+                bg-black-200 text-purple-600  box-shadow overflow-hidden
+                hover:text-purple-400 transition-all duration-[0.2s] ease-in-out"
               target="_blank"
             >
               {icons[contact.fields.contactType.toLowerCase()]}

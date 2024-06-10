@@ -6,8 +6,12 @@ import Project from "../components/Utils/Project";
 import Stacks from "../components/Utils/Stacks";
 import About from "../components/Home/About";
 import ContactMe from "../components/Utils/ContactMe";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+  const location = useLocation();
+  // console.log(location);
+
   return (
     <>
       <Hero />

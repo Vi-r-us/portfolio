@@ -112,6 +112,7 @@ h6 {
 .animate {
   animation: scale 0.15s ease-out;
 }
+
 @keyframes scale {
   0% {
     opacity: 0;
