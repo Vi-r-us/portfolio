@@ -8,9 +8,10 @@ const ProjectCard = ({ project }) => {
   const { title, tags, images } = project;
   return (
     <Link>
-      <article className="flex flex-col gap-3">
+      <article className="flex flex-col gap-3 group">
         <div className="rounded-xl overflow-hidden">
           <img
+            className="group-hover:scale-110 duration-300"
             loading="lazy"
             decoding="async"
             sizes="max(min(100vw - 48px, 800px) - 48px, 200px)"

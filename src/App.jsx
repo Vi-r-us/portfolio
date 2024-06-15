@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -27,7 +27,7 @@ const App = () => {
       {loading ? (
         <div>loading...</div>
       ) : (
-        <BrowserRouter>
+        <>
           <Navbar />
           <Header />
           <Routes>
@@ -40,7 +40,7 @@ const App = () => {
             <Route path="*" element={<Error />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
+        </>
       )}
     </main>
   );

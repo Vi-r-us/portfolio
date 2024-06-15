@@ -15,7 +15,7 @@ const ContactMe = () => {
       >
         <h1
           className="resize text-[15cqmin] font-medium desktop:leading-[208px] 
-            tablet:text-[17cqmin] desktop:text-[20cqmin] group-hover:opacity-15 "
+            tablet:text-[17cqmin] desktop:text-[10.03rem] group-hover:opacity-15 "
         >
           Let&apos;s Talk
         </h1>

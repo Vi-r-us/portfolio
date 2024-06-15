@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { createClient } from "contentful";
 import React, { useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE,
@@ -12,8 +13,13 @@ const AppContext = React.createContext();
 
 // eslint-disable-next-line react/prop-types
 const AppProvider = ({ children }) => {
+  const location = useLocation();
+
   const [loading, setLoading] = useState(true);
   const [portfolio, setPortfolio] = useState();
+  const [route, setRoute] = useState("home");
+
+  // route : about -> home
 
   const getData = async () => {
     try {
@@ -28,6 +34,10 @@ const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    setRoute(location.pathname);
+  }, [location]);
+
+  useEffect(() => {
     getData();
   }, []);
 
@@ -36,6 +46,7 @@ const AppProvider = ({ children }) => {
       value={{
         loading,
         portfolio,
+        route,
       }}
     >
       {children}
