@@ -6,7 +6,9 @@ import { icons } from "../../utilities/icons";
 
 const Contacts = () => {
   const { portfolio } = useGlobalContext();
-  const contacts = portfolio.socials.filter(social => !social.fields.isForLicensing);
+  const contacts = portfolio.socials.filter(
+    (social) => !social.fields.isForLicensing
+  );
   return (
     <section className="section">
       <div className="flex flex-row gap-2 text-start items-center">
@@ -18,7 +20,13 @@ const Contacts = () => {
         {contacts.map((contact) => (
           <a
             key={contact.sys.id}
-            href={contact.fields.url}
+            href={
+              contact.fields.contactType.toLowerCase() == "phone"
+                ? `tel:${contact.fields.url}`
+                : contact.fields.contactType.toLowerCase() == "email"
+                ? `mailto:${contact.fields.url}`
+                : contact.fields.url
+            }
             className="flex gap-2 items-center h-[42px] px-[13px] rounded-[14px] 
                 bg-black-200 text-purple-600 box-shadow overflow-hidden
                 hover:text-purple-400 transition-all duration-[0.2s] ease-in-out"

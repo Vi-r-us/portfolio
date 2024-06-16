@@ -28,12 +28,11 @@ const Error = () => {
 
       <Link
         to={"/"}
-        className="flex items-center gap-2 px-6 z-10
-          h-[42px] bg-purple-600 rounded-xl
-          text-black-200 text-sm font-regular leading-[16.4px]
-          box-shadow"
+        className="flex items-center gap-2 px-6 z-10 relative h-[42px] rounded-xl
+          bg-purple-600 hover:bg-purple-400  text-black-200 group box-shadow 
+          text-sm font-regular leading-[16.4px] transition-all ease-in-out duration-[0.3s]"
       >
-        <HiArrowLeft />
+        <HiArrowLeft className="transition-all duration-[0.3s] ease-in-out relative right-0 group-hover:right-1" />
         <p>Back to Home</p>
       </Link>
     </section>

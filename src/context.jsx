@@ -18,8 +18,7 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [portfolio, setPortfolio] = useState();
   const [route, setRoute] = useState("home");
-
-  // route : about -> home
+  const [emailSent, setEmailSent] = useState(false);
 
   const getData = async () => {
     try {
@@ -47,6 +46,8 @@ const AppProvider = ({ children }) => {
         loading,
         portfolio,
         route,
+        emailSent,
+        setEmailSent,
       }}
     >
       {children}
