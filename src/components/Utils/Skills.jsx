@@ -21,9 +21,9 @@ const Skills = () => {
   skillsList = skillsList.map((list) => {
     return { list: list, speed: 13000 };
   });
-  skillsList[0].speed = 15000;
-  skillsList[1].speed = 12000;
-  skillsList[2].speed = 20000;
+  skillsList[0].speed = 22;
+  skillsList[1].speed = 30;
+  skillsList[2].speed = 20;
 
   return (
     <div
@@ -39,7 +39,7 @@ const Skills = () => {
 
       <div className="flex flex-1 flex-col  justify-between">
         {skillsList.map((obj, index) => (
-          <Marquee skills={obj.list} duration={obj.speed} key={index} />
+          <Marquee skills={obj.list} duration={obj.speed * 1000} key={index} />
         ))}
       </div>
     </div>
@@ -61,7 +61,7 @@ const Marquee = ({ skills, duration }) => {
   }, [ref]);
 
   return (
-    <div className="overflow-hidden w-full">
+    <div className="overflow-hidden w-full skills">
       <div
         style={{ animationDuration: `${duration}ms`, width: 2 * (width + 16) }}
         className="flex gap-4 h-full animate-marquee"
