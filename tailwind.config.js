@@ -20,7 +20,23 @@ export default {
         600: "#ac99ff",
       },
     },
-    extend: {},
+
+    // Added for Marquee
+    extend: {
+      animation: {
+        marquee: "marquee linear infinite",
+        "marquee-vertical": "marquee-vertical linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "marquee-vertical": {
+          "100%": { transform: "translateY(-50%)" },
+        },
+      },
+    },
+
     screens: {
       tablet: "390px",
       // => @media (min-width: 640px) { ... }
@@ -32,5 +48,6 @@ export default {
       // => @media (min-width: 1280px) { ... }
     },
   },
+
   plugins: [],
 };

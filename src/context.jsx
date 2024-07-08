@@ -23,7 +23,14 @@ const AppProvider = ({ children }) => {
   const getData = async () => {
     try {
       const response = await client.getEntries({ content_type: "portfolio" });
-      setPortfolio({ ...response.items[0].fields });
+      // Filter the portfolio by title
+      setPortfolio({
+        ...response.items.filter(
+          (item) =>
+            item.fields.titleAndPosition.toLowerCase() ===
+            import.meta.env.VITE_TITLE
+        )[0].fields,
+      });
 
       setLoading(false);
     } catch (error) {

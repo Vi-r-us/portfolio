@@ -20,15 +20,15 @@ const Globe = () => {
     let phi = 3.24;
 
     const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: width * 2.35,
+      devicePixelRatio: 390 < width && width < 800 ? 2.12 : 2,
+      width: width * (width < 390 ? 2.4 : 2.3),
       height: width * 2.4,
       phi: 0,
       theta: 0,
       dark: 1,
       diffuse: 1.9,
-      mapSamples: 19000,
-      mapBrightness: 6,
+      mapSamples: 18000,
+      mapBrightness: 2,
       opacity: 0.8,
       baseColor: [0.6745098039215687, 0.6, 1],
       markerColor: [0, 0.8, 0.5882352941176471],
@@ -58,11 +58,14 @@ const Globe = () => {
     >
       <div className="flex flex-row gap-2 text-start items-center">
         <GrLocation className="text-green w-[21px] h-[21px]" />
-        <h2 className="font-medium text-lg leading-[21.6px]">Projects</h2>
+        <h2 className="font-medium text-lg leading-[21.6px]">New Delhi, India</h2>
       </div>
 
-      <div className="absolute inset-x-0 top-20 overflow-visible flex ">
-        <canvas ref={canvasRef} className={` aspect-square `} />
+      <div className="absolute inset-x-0 top-[80px] overflow-visible flex ">
+        <canvas
+          ref={canvasRef}
+          className={`aspect-square overflow-visible block ms-auto`}
+        />
       </div>
     </div>
   );

@@ -113,6 +113,11 @@ h6 {
   animation: scale 0.15s ease-out;
 }
 
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+  float: left;
+}
+
 @keyframes scale {
   0% {
     opacity: 0;

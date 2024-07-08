@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <Hero />
-      {/* <About /> */}
+      <About />
       <Project isFeaturedProjects={true} />
       <Stacks isFeaturedStacks={true} />
       <ContactMe />
