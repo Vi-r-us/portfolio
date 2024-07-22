@@ -1,4 +1,4 @@
-# DoMore (TODO) App
+# Portfolio App
 
 ## Project Description
 This is a React-based web application that showcases a portfolio of projects and technologies used. The app is divided into several pages, including Home, About, Projects, Stack, Contact, and Error.
@@ -51,7 +51,6 @@ This is a React-based web application that showcases a portfolio of projects and
 |          Desktop Design          |          Mobile Design          |
 | :------------------------------: | :-----------------------------: |
 | ![](./screenshots/desktop.png) | ![](./screenshots/mobile.png) |
-| ![](./design/desktop-design-light.jpg) | ![](./design/mobile-design-light.jpg) |
 
 ### Links
 - **Solution URL:** [GitHub Repository](https://github.com/Vi-r-us/do-more)
