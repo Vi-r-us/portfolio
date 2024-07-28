@@ -3,11 +3,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// TODO: Will navigate to project detail page
 const ProjectCard = ({ project }) => {
-  // TODO: Add project images, title and tags from API
-  const { title, tags, images } = project;
+  const { title, tags, coverImage, liveUrl } = project;
   return (
-    <Link>
+    <Link to={liveUrl} target="_blank">
       <article className="flex flex-col gap-3 group">
         <div className="rounded-xl overflow-hidden">
           <img
@@ -16,15 +16,15 @@ const ProjectCard = ({ project }) => {
             decoding="async"
             sizes="max(min(100vw - 48px, 800px) - 48px, 200px)"
             srcSet={
-              images.mobile +
+              coverImage.fields.file.url +
               " 512w," +
-              images.tablet +
+              coverImage.fields.file.url +
               " 1024w," +
-              images.desktop +
+              coverImage.fields.file.url +
               " 1400w"
             }
-            src={project.images.desktop}
-            alt={title}
+            src={coverImage.fields.file.url}
+            alt={coverImage.fields.title}
           ></img>
         </div>
 
