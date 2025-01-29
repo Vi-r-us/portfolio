@@ -5,7 +5,12 @@ import { PiStarFourFill } from "react-icons/pi";
 import { TbSquareRotated } from "react-icons/tb";
 import { useGlobalContext } from "../../context";
 
+/**
+ * Skills component.
+ * Displays a list of skills in three columns with different scrolling speeds.
+ */
 const Skills = () => {
+  // Get portfolio data from global context
   const { portfolio } = useGlobalContext();
   // Split Array to 3 arrays
   let skillsList = portfolio.skillList.reduce(
@@ -31,7 +36,9 @@ const Skills = () => {
         flex-1 overflow-hidden relative"
     >
       <div className="flex flex-row gap-2 text-start items-center">
+      {/* Skills icon */}
         <TbSquareRotated className="text-green w-[21px] h-[21px]" />
+        {/* Location */}
         <h2 className="font-medium text-lg leading-[21.6px]">
           New Delhi, India
         </h2>
@@ -39,6 +46,7 @@ const Skills = () => {
 
       <div className="flex flex-1 flex-col  justify-between">
         {skillsList.map((obj, index) => (
+          // Marquee component for scrolling skills
           <Marquee skills={obj.list} duration={obj.speed * 1000} key={index} />
         ))}
       </div>
@@ -48,6 +56,13 @@ const Skills = () => {
 
 export default Skills;
 
+/**
+ * Marquee component.
+ * Displays a list of skills that scroll horizontally.
+ *
+ * @param {Array} skills - The list of skills to display.
+ * @param {number} duration - The duration of the scrolling animation in milliseconds.
+ */
 const Marquee = ({ skills, duration }) => {
   const [width, setWidth] = useState(0);
   const ref = useRef(null);
@@ -73,7 +88,9 @@ const Marquee = ({ skills, duration }) => {
                 className="flex gap-3 items-center text-center bg-black"
                 key={index}
               >
+               {/* Skill icon */}
                 <PiStarFourFill className="w-[14px] h-[14px] text-purple-600" />
+                {/* Skill name */}
                 <span className="p-3 py-2 bg-black-200 rounded-xl text-sm font-light leading-[20px] ">
                   {skill}
                 </span>

@@ -2,6 +2,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
+/**
+ * EducationCard component.
+ * Displays a card with education information including course name, institute name, and duration.
+ *
+ * @param {object} edu - The education data to display.
+ */
 const EducationCard = ({ edu }) => {
   const { courseName, instituteName, startingYear, completionYear } = edu;
   return (
@@ -12,7 +18,9 @@ const EducationCard = ({ edu }) => {
       </div>
 
       <div className="flex flex-1 flex-col gap-0.5 pb-6 group-last:pb-0">
+        {/* Course name */}
         <h3 className="font-normal text-base leading-[22.4px]">{courseName}</h3>
+        {/* Institute name and duration */}
         <p className="text-sm font-light text-white-400 leading-[16.8px]">
           {instituteName}, {startingYear} - {completionYear}
         </p>

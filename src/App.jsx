@@ -11,9 +11,14 @@ import Contact from "./pages/Contact";
 import Error from "./pages/Error";
 import Licensing from "./pages/Licensing";
 import { useGlobalContext } from "./context";
+import SingleProject from "./pages/SingleProject";
 
+/**
+ * Main application component.
+ * Handles routing and displays the appropriate components based on the URL path.
+ * Also displays a loading state when the application is loading.
+ */
 const App = () => {
-  // return <h1 className="text-3xl font-bold underline">Tailwind Portfolio</h1>
   const { loading } = useGlobalContext();
 
   return (
@@ -23,23 +28,24 @@ const App = () => {
             loading ? "items-center justify-center" : ""
           }`}
     >
-      {/* Add an animation here */}
+      {/* Display loading message if loading, otherwise display the main content */}
       {loading ? (
         <div>loading...</div>
       ) : (
         <>
-          <Navbar />
-          <Header />
+          <Navbar /> {/* Navigation bar */}
+          <Header /> {/* Header section */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:projectId" element={<SingleProject />} />
             <Route path="/stack" element={<Stack />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/licensing" element={<Licensing />} />
             <Route path="*" element={<Error />} />
           </Routes>
-          <Footer />
+          <Footer /> {/* Footer section */}
         </>
       )}
     </main>

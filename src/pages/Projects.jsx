@@ -4,12 +4,16 @@ import Hero from "../components/Projects/Hero";
 import Project from "../components/Utils/Project";
 import ContactMe from "../components/Utils/ContactMe";
 
+/**
+ * Projects component.
+ * Displays the projects page with a hero section, a list of projects, and a contact section.
+ */
 const Projects = () => {
   return (
     <>
-      <Hero />
-      <Project/>
-      <ContactMe />
+      <Hero /> {/* Hero section */}
+      <Project /> {/* List of projects */}
+      <ContactMe /> {/* Contact section */}
     </>
   );
 };

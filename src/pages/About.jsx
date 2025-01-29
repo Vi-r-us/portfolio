@@ -6,14 +6,19 @@ import Education from "../components/About/Education";
 import Experience from "../components/About/Experience";
 import ContactMe from "../components/Utils/ContactMe";
 
+/**
+ * About component.
+ * Displays the about page with a hero section, education section, experience section,
+ * featured stacks, and a contact section.
+ */
 const About = () => {
   return (
     <>
-      <Hero />
-      <Education />
-      <Experience />
-      <Stacks isFeaturedStacks={true} />
-      <ContactMe />
+      <Hero /> {/* Hero section */}
+      <Education /> {/* Education section */}
+      <Experience /> {/* Experience section */}
+      <Stacks isFeaturedStacks={true} /> {/* Featured stacks */}
+      <ContactMe /> {/* Contact section */}
     </>
   );
 };

@@ -3,6 +3,10 @@ import createGlobe from "cobe";
 import React, { useEffect, useRef, useState } from "react";
 import { GrLocation } from "react-icons/gr";
 
+/**
+ * Globe component.
+ * Displays a 3D globe visualization with a marker at a specified location.
+ */
 const Globe = () => {
   const canvasRef = useRef();
   const globeDiv = useRef();
@@ -57,8 +61,12 @@ const Globe = () => {
       ref={globeDiv}
     >
       <div className="flex flex-row gap-2 text-start items-center">
+        {/* Location icon */}
         <GrLocation className="text-green w-[21px] h-[21px]" />
-        <h2 className="font-medium text-lg leading-[21.6px]">New Delhi, India</h2>
+        {/* Location heading */}
+        <h2 className="font-medium text-lg leading-[21.6px]">
+          New Delhi, India
+        </h2>
       </div>
 
       <div className="absolute inset-x-0 top-[80px] overflow-visible flex ">

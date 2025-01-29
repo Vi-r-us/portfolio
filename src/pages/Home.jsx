@@ -6,16 +6,19 @@ import Project from "../components/Utils/Project";
 import Stacks from "../components/Utils/Stacks";
 import About from "../components/Home/About";
 import ContactMe from "../components/Utils/ContactMe";
-import { useLocation } from "react-router-dom";
 
+/**
+ * Home component.
+ * Displays the home page with a hero section, about section, featured projects, featured stacks, and a contact section.
+ */
 const Home = () => {
   return (
     <>
-      <Hero />
-      <About />
-      <Project isFeaturedProjects={true} />
-      <Stacks isFeaturedStacks={true} />
-      <ContactMe />
+      <Hero /> {/* Hero section */}
+      <About /> {/* About section */}
+      <Project isFeaturedProjects={true} /> {/* Featured projects */}
+      <Stacks isFeaturedStacks={true} /> {/* Featured stacks */}
+      <ContactMe /> {/* Contact section */}
     </>
   );
 };

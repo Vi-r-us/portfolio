@@ -3,9 +3,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 
+/**
+ * Footer component.
+ * Displays the footer section of the application with copyright information,
+ * developer's name, and links to licensing and 404 pages.
+ */
 const Footer = () => {
+  // Get portfolio data from global context
   const { portfolio } = useGlobalContext();
+  // Extract first name from portfolio name
   const firstName = portfolio.name.split(" ")[0];
+  // Get GitHub URL from portfolio socials
   const link = portfolio.socials.filter(
     (social) => social.fields.contactType.toLowerCase() === "github"
   )[0].fields.url;
@@ -18,7 +26,9 @@ const Footer = () => {
         desktop:flex-row desktop:justify-between "
     >
       <div className="flex flex-col items-center text-center gap-3 desktop:items-start">
-        <p>© 2023. All rights Reserved.</p>
+        {/* Copyright information */}
+        <p>© 2025. All rights Reserved.</p>
+        {/* Developer's name and React link */}
         <p>
           Made by &nbsp;
           <a href={link} target="_blank">
@@ -33,7 +43,9 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col items-center gap-3 desktop:items-end">
+        {/* Link to Licensing page */}
         <Link to={"/licensing"}>{"Licensing"}</Link>
+        {/* Link to 404 page */}
         <Link to={"/404"}>{"404"}</Link>
       </div>
     </footer>
