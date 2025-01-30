@@ -9,7 +9,7 @@ const ProjectNavigation = ({ liveSiteUrl, githubUrl }) => {
     <section className="section desktop:justify-between desktop:flex-row">
       <div className="hidden desktop:block">
         <NavigationButton
-          buttonText="Go back to projects"
+          buttonText="Back to projects"
           href="/projects"
           icon={RiArrowLeftLine}
           iconPosition="before"
@@ -19,14 +19,14 @@ const ProjectNavigation = ({ liveSiteUrl, githubUrl }) => {
 
       <div className="flex flex-col gap-4 desktop:flex-row ">
         <NavigationButton
-          buttonText="Preview Site"
+          buttonText="Preview"
           href={liveSiteUrl}
           icon={FaRegEye}
           iconPosition="after"
           className="px-6 desktop:mr-[2px]"
         />
         <NavigationButton
-          buttonText="Github URL"
+          buttonText="Github"
           href={githubUrl}
           icon={SiGithub}
           iconPosition="after"
