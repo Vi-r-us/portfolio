@@ -1,13 +1,33 @@
+import { useParams } from "react-router-dom";
+import { useGlobalContext } from "../context";
 import ProjectNavigation from "../components/SingleProject/ProjectNavigation";
 import ProjectTitle from "../components/SingleProject/ProjectTitle";
 import ContactMe from "../components/Utils/ContactMe";
 import Project from "../components/Utils/Project";
+import ProjectDescription from "../components/SingleProject/ProjectDescription";
 
 const SingleProject = () => {
+  const { portfolio } = useGlobalContext();
+  const params = useParams();
+
+  const project = portfolio.projects.filter(
+    (project) =>
+      project.fields.title.split(" ").join("-").toLowerCase() ===
+      params.projectId
+  )[0];
+
+  const {
+    githubUrl,
+    liveUrl,
+    title,
+    projectDescription: projectDescDocument,
+  } = project.fields;
+
   return (
     <>
-      <ProjectNavigation />
-      <ProjectTitle />
+      <ProjectNavigation githubUrl={githubUrl} liveSiteUrl={liveUrl} />
+      <ProjectTitle title={title} />
+      <ProjectDescription projectDescDocument={projectDescDocument} />
       <Project isFeaturedProjects={true} />
       <ContactMe />
     </>
