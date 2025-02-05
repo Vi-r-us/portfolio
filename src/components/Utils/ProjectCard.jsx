@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { Link } from "react-router-dom";
+import ProjectTags from "./ProjectTags";
 
 /**
  * ProjectCard component.
@@ -20,7 +21,7 @@ const ProjectCard = ({ project }) => {
     <Link to={`/projects/${projectId}`}>
       <article className="flex flex-col gap-3 group">
         <div className="rounded-xl overflow-hidden">
-        {/* Cover image */}
+          {/* Cover image */}
           <img
             className="group-hover:scale-110 duration-300"
             loading="lazy"
@@ -41,19 +42,7 @@ const ProjectCard = ({ project }) => {
 
         <div className="flex flex-col gap-2">
           {/* Tags */}
-          <ul className="flex flex-row gap-2 flex-wrap">
-            {tags.map((tag, index) => (
-              // Render each tag
-              <li
-                className=" text-center rounded-lg px-2 py-1 bg-black-200 
-                text-xs font-light leading-[14.4px] capitalize text-purple-600
-                flex flex-row text-nowrap"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
+          <ProjectTags tags={tags} />
           {/* Project title */}
           <h3 className="font-normal text-base leading-[22.4px]">{title}</h3>
         </div>

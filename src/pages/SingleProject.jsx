@@ -20,6 +20,7 @@ const SingleProject = () => {
     githubUrl,
     liveUrl,
     title,
+    tags,
     projectDescription: projectDescDocument,
   } = project.fields;
 
@@ -27,7 +28,10 @@ const SingleProject = () => {
     <>
       <ProjectNavigation githubUrl={githubUrl} liveSiteUrl={liveUrl} />
       <ProjectTitle title={title} />
-      <ProjectDescription projectDescDocument={projectDescDocument} />
+      <ProjectDescription
+        projectDescDocument={projectDescDocument}
+        projectTags={tags}
+      />
       <Project isFeaturedProjects={true} />
       <ContactMe />
     </>
