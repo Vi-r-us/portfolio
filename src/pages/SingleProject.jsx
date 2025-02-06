@@ -17,12 +17,14 @@ const SingleProject = () => {
   )[0];
 
   const {
+    projectImages,
     githubUrl,
     liveUrl,
     title,
     tags,
     projectDescription: projectDescDocument,
   } = project.fields;
+  
 
   return (
     <>
@@ -31,6 +33,7 @@ const SingleProject = () => {
       <ProjectDescription
         projectDescDocument={projectDescDocument}
         projectTags={tags}
+        projectImages={projectImages}
       />
       <Project isFeaturedProjects={true} />
       <ContactMe />

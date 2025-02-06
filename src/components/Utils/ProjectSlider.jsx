@@ -18,11 +18,21 @@ const ProjectSlider = ({ images }) => {
   };
 
   return (
-    <div className="relative w-full max-w-lg mx-auto">
+    <div className="relative w-full  mx-auto">
       <div className="rounded-xl overflow-hidden">
         {/* Render the current image */}
         <img
-          src={images[currentIndex]}
+          loading="lazy"
+          decoding="async"
+          sizes="max(min(100vw - 48px, 800px) - 48px, 200px)"
+          srcSet={
+            images[currentIndex].src +
+            " 512w," +
+            images[currentIndex].src +
+            " 1024w," +
+            images[currentIndex].src +
+            " 1400w"
+          }
           alt={`Slide ${currentIndex}`}
           className="w-full h-auto"
         />
