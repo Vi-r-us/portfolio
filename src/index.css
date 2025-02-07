@@ -107,6 +107,31 @@ h6 {
       rgba(0, 0, 0, 0) 100%
     );
   }
+
+  .project-description-text {
+    @apply flex flex-col pt-6;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply mt-10 whitespace-pre-wrap break-words text-wrap text-2xl desktop:text-4xl leading-7 desktop:leading-[43.2px] font-medium;
+    }
+
+    p {
+      @apply mt-2 text-sm desktop:text-base leading-[19.6px] desktop:leading-[22.4px] font-light text-white-400 [&_b]:font-bold;
+    }
+
+    li {
+      @apply before:content-['•'] before:text-white-400 before:ml-0.5 flex gap-4;
+    }
+
+    ul {
+      @apply mt-2 [&_p]:mt-0;
+    }
+  }
 }
 
 .radical-gradient:hover {

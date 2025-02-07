@@ -10,12 +10,12 @@ const ProjectDescription = ({
   projectImages,
 }) => {
   const projectDesc = documentToHtmlString(projectDescDocument);
-  
+
   const images = projectImages.map((image) => {
     return {
       id: image.sys.id,
       title: image.fields.title,
-      src: image.fields.file.url
+      src: image.fields.file.url,
     };
   });
 
@@ -29,8 +29,8 @@ const ProjectDescription = ({
 
       {/* Render the project description as HTML */}
       <div
-        className="flex flex-col gap-2"
-        dangerouslySetInnerHTML={{ __html: projectDesc }}
+        className="project-description-text"
+        dangerouslySetInnerHTML={{ __html: projectDesc }} 
       />
     </section>
   );
