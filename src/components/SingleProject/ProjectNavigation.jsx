@@ -42,7 +42,7 @@ const ProjectNavigation = ({ liveSiteUrl, githubUrl }) => {
           icon={SiGithub}
           isBlank={true}
           iconPosition="after"
-          className="px-6 bg-purple-600 text-black-400 hover:bg-purple-400 hover:text-black-400 desktop:scale-105"
+          className="px-6 !bg-purple-600 !text-black-400 !hover:bg-purple-400 !hover:text-black-400 !desktop:scale-105"
         />
       </div>
     </section>
