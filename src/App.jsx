@@ -23,10 +23,9 @@ const App = () => {
 
   return (
     <main
-      className={`p-6 pb-[5.5rem] flex flex-col gap-4 max-w-[848px] min-h-lvh
-          tablet:pb-[6.375rem] mx-auto tablet:gap-6 ${
-            loading ? "items-center justify-center" : ""
-          }`}
+      className={`p-6 pb-[5.5rem] flex flex-col gap-4 max-w-[848px] min-h-lvh tablet:pb-[6.375rem] mx-auto tablet:gap-6 ${
+        loading ? "items-center justify-center" : ""
+      }`}
     >
       {/* Display loading message if loading, otherwise display the main content */}
       {loading ? (

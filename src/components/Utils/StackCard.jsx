@@ -12,13 +12,7 @@ import React from "react";
 const StackCard = ({ stack }) => {
   const { title, subTitle, description, icon, website } = stack;
   // Temporary solution for size issues with the icons
-  const paddedIconsSet = new Set([
-    "figma",
-    "chat gpt",
-    "html 5",
-    "css 3",
-    "react",
-  ]);
+  const paddedIconsSet = new Set([]);
 
   return (
     <a href={website} target="_blank" className="group">
@@ -28,9 +22,7 @@ const StackCard = ({ stack }) => {
             {/* Stack icon */}
             <img
               decoding="async"
-              className={
-                !paddedIconsSet.has(title.toLowerCase()) ? "w-[32px]" : ""
-              }
+              className="w-[32px]"
               sizes="max(min(100vw - 48px, 800px) - 48px, 200px)"
               src={icon.fields.file.url}
               alt={title}
