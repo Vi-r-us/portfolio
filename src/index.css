@@ -162,3 +162,24 @@ h6 {
     transform: perspective(1200px) scale(1);
   }
 }
+
+.card-animation {
+  box-shadow: -1rem 0 3rem #000000;
+  left: 0px;
+  transition: 0.4s ease-out;
+
+  &:not(:first-child) {
+    margin-left: -8px;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    transition: 0.4s ease-out;
+  }
+
+  &:hover ~ .card-animation {
+    position: relative;
+    left: 8px;
+    transition: 0.4s ease-out;
+  }
+}
